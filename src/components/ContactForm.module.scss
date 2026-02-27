@@ -1,0 +1,44 @@
+.form {
+    background-color: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+}
+
+.group {
+    margin-bottom: 1.5rem;
+
+    label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: var(--foreground);
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        border: 1px solid var(--border);
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.2s ease;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+    }
+}
+
+.successMessage {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #34d399;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}

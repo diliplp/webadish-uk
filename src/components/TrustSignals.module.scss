@@ -1,0 +1,35 @@
+@import '../styles/mixins.scss';
+
+.section {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.container {
+    @include container;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    @include respond-to('md') {
+        gap: 3rem;
+    }
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 0.95rem;
+
+    .icon {
+        color: var(--secondary);
+    }
+}
