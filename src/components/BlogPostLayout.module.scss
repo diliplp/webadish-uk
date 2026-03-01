@@ -1,0 +1,61 @@
+@import '../styles/mixins.scss';
+
+.wrapper {
+  padding: 5rem 0;
+}
+
+.article {
+  max-width: 900px;
+  background: linear-gradient(180deg, #131722 0%, #0f121b 100%);
+  border: 1px solid #2a3142;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  @include respond-to('md') {
+    padding: 3rem;
+  }
+}
+
+.kicker {
+  display: inline-block;
+  color: #7dd3fc;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.content {
+  h2 {
+    margin-top: 2rem;
+    color: #e2e8f0;
+  }
+
+  p, li {
+    color: #a8b1c2;
+  }
+
+  ul, ol {
+    padding-left: 1.25rem;
+  }
+}
+
+.cta {
+  margin-top: 2.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  background: rgba(59,130,246,0.12);
+  border: 1px solid rgba(125,211,252,0.35);
+  color: #e2e8f0;
+}
