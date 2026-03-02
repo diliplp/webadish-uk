@@ -9,7 +9,8 @@ const ContactForm = () => {
         name: '',
         email: '',
         website: '',
-        message: ''
+        message: '',
+        company: ''
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,7 +44,7 @@ const ContactForm = () => {
             }
 
             setIsSuccess(true);
-            setFormData({ name: '', email: '', website: '', message: '' });
+            setFormData({ name: '', email: '', website: '', message: '', company: '' });
         } catch (err) {
             if (err instanceof Error && err.name === 'AbortError') {
                 setError('Request timed out. Please try again in a moment.');
@@ -118,6 +119,19 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                 ></textarea>
+            </div>
+
+            <div className={styles.honeypotField} aria-hidden="true">
+                <label htmlFor="company">Company</label>
+                <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.company}
+                    onChange={handleChange}
+                />
             </div>
 
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>

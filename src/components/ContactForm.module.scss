@@ -52,3 +52,10 @@
     text-align: center;
     border: 1px solid rgba(239, 68, 68, 0.3);
 }
+
+.honeypotField {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+}

@@ -8,6 +8,35 @@ interface ContactPayload {
   email?: string;
   website?: string;
   message?: string;
+  company?: string; // honeypot
+}
+
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_LIMIT_MAX_REQUESTS = 5;
+const ipHits = new Map<string, number[]>();
+
+function getClientIp(request: Request) {
+  const forwarded = request.headers.get('x-forwarded-for');
+  if (forwarded) return forwarded.split(',')[0].trim();
+  return request.headers.get('x-real-ip') || 'unknown';
+}
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  const existing = ipHits.get(ip) || [];
+  const recent = existing.filter((ts) => now - ts < RATE_LIMIT_WINDOW_MS);
+  recent.push(now);
+  ipHits.set(ip, recent);
+  return recent.length > RATE_LIMIT_MAX_REQUESTS;
+}
+
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
 }
 
 export async function POST(request: Request) {
@@ -17,6 +46,20 @@ export async function POST(request: Request) {
     const email = body.email?.trim();
     const website = body.website?.trim() || 'Not provided';
     const message = body.message?.trim();
+    const honeypot = body.company?.trim();
+    const ip = getClientIp(request);
+
+    // Honeypot: pretend success to avoid teaching bots
+    if (honeypot) {
+      return NextResponse.json({ success: true });
+    }
+
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please wait a few minutes before trying again.' },
+        { status: 429 }
+      );
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 });
@@ -45,6 +88,12 @@ export async function POST(request: Request) {
       socketTimeout: 15000,
     });
 
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeWebsite = escapeHtml(website);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br/>');
+
+    // 1) Notify team inbox
     await transporter.sendMail({
       from: `"${fromName}" <${fromEmail}>`,
       to,
@@ -53,11 +102,25 @@ export async function POST(request: Request) {
       text: `Name: ${name}\nEmail: ${email}\nWebsite: ${website}\n\nMessage:\n${message}`,
       html: `
         <h2>New contact form enquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Website:</strong> ${website}</p>
+        <p><strong>Name:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
+        <p><strong>Website:</strong> ${safeWebsite}</p>
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br/>')}</p>
+        <p>${safeMessage}</p>
+      `,
+    });
+
+    // 2) Auto-reply to customer
+    await transporter.sendMail({
+      from: `"${fromName}" <${fromEmail}>`,
+      to: email,
+      subject: 'Thanks for contacting WebAdish — we received your message',
+      text: `Hi ${name},\n\nThank you for contacting WebAdish. We have received your message and will get back to you shortly.\n\nYour message:\n${message}\n\nRegards,\nWebAdish Team`,
+      html: `
+        <p>Hi ${safeName},</p>
+        <p>Thank you for contacting <strong>WebAdish</strong>. We have received your message and will get back to you shortly.</p>
+        <p><strong>Your message:</strong><br/>${safeMessage}</p>
+        <p>Regards,<br/>WebAdish Team</p>
       `,
     });
 
