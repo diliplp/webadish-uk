@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
+export const runtime = 'nodejs';
+
 interface ContactPayload {
   name?: string;
   email?: string;
@@ -57,8 +59,16 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error('Contact form mail error:', error);
-    return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unknown error';
+    console.error('Contact form mail error:', message, error);
+
+    return NextResponse.json(
+      {
+        error: 'Failed to send message.',
+        debug: process.env.NODE_ENV !== 'production' ? message : undefined,
+      },
+      { status: 500 }
+    );
   }
 }
