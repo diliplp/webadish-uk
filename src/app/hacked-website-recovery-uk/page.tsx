@@ -46,7 +46,7 @@ export default function RecoveryUK() {
         <PageTemplate
             hero={{
                 title: "Hacked WordPress Site? <br /><span style='color: #ef4444'>We Fix It Fast.</span>",
-                subtitle: "UK-based emergency recovery service. We clean malware, restore access, and secure your site against future attacks.",
+                subtitle: "Professional emergency recovery service for UK businesses. We clean malware, restore access, and secure your site against future attacks.",
                 ctaText: "Start Emergency Recovery",
                 ctaLink: "#contact-section"
             }}

@@ -6,7 +6,7 @@ import { generatePageMetadata } from '@/lib/seo';
 
 export const metadata = generatePageMetadata({
     title: 'Contact WebAdish | WordPress Security Experts UK',
-    description: 'Contact WebAdish for WordPress security audits, maintenance plans, malware removal, and emergency hacked site recovery. UK-based WordPress security specialists.',
+    description: 'Contact WebAdish for WordPress security audits, maintenance plans, malware removal, and emergency hacked site recovery. WordPress security specialists serving UK businesses.',
     path: '/contact-webadish-web-design',
 });
 
@@ -14,7 +14,7 @@ export default function Contact() {
     const faqs = [
         {
             question: "What are your support hours?",
-            answer: "Our UK-based team provides support during business hours with 24/7 monitoring for critical issues. Emergency recovery requests are handled around the clock."
+            answer: "Our team provides support during UK business hours with 24/7 monitoring for critical issues. Emergency recovery requests are handled around the clock. UK services are delivered in partnership with BTL ITC Ltd."
         },
         {
             question: "Do you offer white-label services?",
@@ -70,7 +70,7 @@ export default function Contact() {
                             <div className={styles.trustList}>
                                 <p>✓ Response within 1 business hour</p>
                                 <p>✓ No long-term lock-in contracts</p>
-                                <p>✓ UK-based security specialists</p>
+                                <p>✓ UK services via BTL ITC Ltd</p>
                             </div>
                         </div>
 

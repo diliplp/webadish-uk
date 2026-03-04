@@ -71,7 +71,7 @@ export default function HackedSiteLP() {
             maxWidth: '600px',
             margin: '0 auto 2rem',
           }}>
-            Don&apos;t panic. Our UK-based WordPress security team will remove the malware, clean your site, and make sure it doesn&apos;t happen again.
+            Don&apos;t panic. Our expert WordPress security team will remove the malware, clean your site, and make sure it doesn&apos;t happen again.
           </p>
 
           {/* Emergency contact */}
