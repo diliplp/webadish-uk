@@ -36,7 +36,7 @@ export default function About() {
         <PageTemplate
             hero={{
                 title: "About <br /><span style='color: var(--primary)'>Webadish</span>",
-                subtitle: "We&apos;re on a mission to make the web a safer place for businesses.",
+                subtitle: "We're on a mission to make the web a safer place for businesses.",
                 ctaText: "Work With Us"
             }}
             content={content}
