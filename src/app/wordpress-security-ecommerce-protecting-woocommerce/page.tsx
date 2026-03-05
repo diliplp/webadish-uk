@@ -272,7 +272,7 @@ export default function WordPressSecurityEcommercePage() {
         <li><strong><Link href="/wordpress-malware-removal">Malware removal</Link></strong> provides guaranteed cleanup if the worst happens, with a fixed fee and no hidden charges.</li>
       </ul>
       <p>
-        If you are running a WooCommerce store and have not had a professional security review in the past six months, <Link href="/contact-webadish-web-design">contact our team</Link> to schedule an assessment. The cost of prevention is always a fraction of the cost of recovery, and for e-commerce sites, the potential consequences of a breach make proactive security an essential business investment.
+        If you are running a WooCommerce store and have not had a professional security review in the past six months, <Link href="/contact">contact our team</Link> to schedule an assessment. The cost of prevention is always a fraction of the cost of recovery, and for e-commerce sites, the potential consequences of a breach make proactive security an essential business investment.
       </p>
 
       <FAQ items={faqItems} />

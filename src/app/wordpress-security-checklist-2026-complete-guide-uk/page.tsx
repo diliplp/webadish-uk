@@ -246,7 +246,7 @@ export default function WordPressSecurityChecklist2026Page() {
         The cost of prevention is always lower than the cost of recovery. A professional <Link href="/wordpress-security-audit">security audit</Link> typically costs a fraction of what a full <Link href="/hacked-website-recovery-uk">hacked website recovery</Link> demands in fees, lost revenue, and damaged reputation.
       </p>
       <p>
-        If you are unsure where your site stands, <Link href="/contact-webadish-web-design">get in touch with our team</Link> for a no-obligation security assessment. We will identify your most urgent vulnerabilities and recommend a prioritised remediation plan.
+        If you are unsure where your site stands, <Link href="/contact">get in touch with our team</Link> for a no-obligation security assessment. We will identify your most urgent vulnerabilities and recommend a prioritised remediation plan.
       </p>
 
       <FAQ items={faqItems} />

@@ -7,7 +7,7 @@ import { generatePageMetadata } from '@/lib/seo';
 export const metadata = generatePageMetadata({
     title: 'Contact WebAdish | WordPress Security Experts UK',
     description: 'Contact WebAdish for WordPress security audits, maintenance plans, malware removal, and emergency hacked site recovery. WordPress security specialists serving UK businesses.',
-    path: '/contact-webadish-web-design',
+    path: '/contact',
 });
 
 export default function Contact() {

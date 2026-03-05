@@ -81,7 +81,7 @@ export const CONTENT_ROUTES: RouteConfig[] = [
     lastModified: '2026-03-03',
   },
   {
-    path: '/contact-webadish-web-design',
+    path: '/contact',
     label: 'Contact',
     priority: 0.7,
     changeFreq: 'monthly',

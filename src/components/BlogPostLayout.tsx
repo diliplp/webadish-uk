@@ -119,7 +119,7 @@ export default function BlogPostLayout({
             <p style={{ color: '#a1a1aa', marginBottom: '1.25rem' }}>
               Get a professional security audit or speak to our team about protecting your WordPress site.
             </p>
-            <Link href="/contact-webadish-web-design" className="btn btn-primary">
+            <Link href="/contact" className="btn btn-primary">
               Request a Security Review
             </Link>
           </div>

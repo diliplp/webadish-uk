@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     return [
       // Legacy core pages
       { source: '/about', destination: '/about-webadish-web-agency', permanent: true },
-      { source: '/contact', destination: '/contact-webadish-web-design', permanent: true },
+      { source: '/contact-webadish-web-design', destination: '/contact', permanent: true },
       { source: '/portfolio', destination: '/web-design-portfolio', permanent: true },
       { source: '/services', destination: '/web-design-services', permanent: true },
 

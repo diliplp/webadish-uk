@@ -104,7 +104,7 @@ const Header = () => {
                     <a href="https://wa.me/441923751614" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
                         <Phone size={16} style={{ marginRight: '8px' }} /> Emergency Help
                     </a>
-                    <Link href="/contact-webadish-web-design" className="btn btn-primary">
+                    <Link href="/contact" className="btn btn-primary">
                         <ShieldAlert size={16} style={{ marginRight: '8px' }} /> Security Review
                     </Link>
                 </div>
@@ -128,7 +128,7 @@ const Header = () => {
                     <Link href="/case-studies" onClick={() => setIsMobileMenuOpen(false)}>Case Studies</Link>
                     <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)}>Blog</Link>
                     <Link href="/about-webadish-web-agency" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
-                    <Link href="/contact-webadish-web-design" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>
+                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="btn btn-primary" style={{ textAlign: 'center', justifyContent: 'center' }}>
                         Request Security Review
                     </Link>
                 </div>

@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({
     title,
     subtitle,
     ctaText = 'Request a Security Review',
-    ctaLink = '/contact-webadish-web-design',
+    ctaLink = '/contact',
     showTrust = true,
     showImage = false,
     heroImage = '/hero-security.svg',

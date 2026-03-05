@@ -38,7 +38,7 @@ const Footer = () => {
                             <li><Link href="/case-studies">Case Studies</Link></li>
                             <li><Link href="/blog">Blog</Link></li>
                             <li><Link href="/about-webadish-web-agency">About Us</Link></li>
-                            <li><Link href="/contact-webadish-web-design">Contact</Link></li>
+                            <li><Link href="/contact">Contact</Link></li>
                         </ul>
                     </div>
 

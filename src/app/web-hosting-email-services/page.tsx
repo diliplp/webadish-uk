@@ -31,7 +31,7 @@ export default function Hosting() {
                 title: "Secure Managed <br /><span style='color: var(--primary)'>WordPress Hosting</span>",
                 subtitle: "Enterprise-grade hosting infrastructure with built-in security layers. WAF protection, automated backups, and 99.99% uptime for UK businesses.",
                 ctaText: "Get Secure Hosting",
-                ctaLink: "/contact-webadish-web-design"
+                ctaLink: "/contact"
             }}
             content={content}
             features={{
