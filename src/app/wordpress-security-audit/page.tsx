@@ -347,7 +347,7 @@ export default function WordPressSecurityAudit() {
               <p style={{ color: '#a1a1aa', fontSize: '0.9rem' }}>
                 Need a tailored quote? Call{' '}
                 <strong style={{ color: 'var(--foreground)' }}>
-                  +44-XXX-XXXX-XXXX
+                  +44 1923 751614
                 </strong>
               </p>
             </div>
