@@ -1,12 +1,26 @@
 import PageTemplate from '@/components/PageTemplate';
 import ContactForm from '@/components/ContactForm';
 import { generatePageMetadata } from '@/lib/seo';
+import { generateBreadcrumbSchema, generateServiceSchema } from '@/lib/schema';
 
 export const metadata = generatePageMetadata({
     title: 'Hacked WordPress Site Recovery UK | Emergency Fix in Hours | WebAdish',
     description: 'Emergency WordPress hacked site recovery for UK businesses. We remove malware, clean backdoors, and restore your site within 4-24 hours. Fixed fee £1,499 with 30-day guarantee.',
     path: '/hacked-website-recovery-uk',
 });
+
+const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/#services' },
+    { name: 'Hacked Website Recovery', url: '/hacked-website-recovery-uk' },
+]);
+
+const serviceSchema = generateServiceSchema(
+    'Hacked Website Recovery UK',
+    'Emergency WordPress hacked site recovery for UK businesses. Malware removal, blacklist removal, and security hardening within 4-24 hours.',
+    '/hacked-website-recovery-uk',
+    '£1499'
+);
 
 export default function RecoveryUK() {
     const content = (
@@ -43,6 +57,9 @@ export default function RecoveryUK() {
     );
 
     return (
+        <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
         <PageTemplate
             hero={{
                 title: "Hacked WordPress Site? <br /><span style='color: #ef4444'>We Fix It Fast.</span>",
@@ -62,5 +79,6 @@ export default function RecoveryUK() {
                 btnLink: "#contact-section"
             }}
         />
+        </>
     );
 }
