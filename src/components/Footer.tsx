@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className={styles.grid}>
                     <div className={styles.column}>
                         <Link href="/" className={styles.logo}>
-                            <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={245} height={70} style={{ width: 'auto', height: '36px' }} />
+                            <Image src="/brand/webadish-logo-white.png" alt="Webadish" width={245} height={70} style={{ width: 'auto', height: '52px' }} />
                         </Link>
                         <p className={styles.description}>
                             Specialist WordPress security agency for UK businesses. High-ticket security retainers, maintenance, and emergency recovery.
