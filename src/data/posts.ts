@@ -89,6 +89,26 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Guides',
     author: 'WebAdish',
   },
+  {
+    slug: 'wordpress-maintenance-service-uk-what-is-included-and-how-much-it-costs',
+    title: "WordPress Maintenance Service UK: What's Included & How Much It Costs",
+    excerpt:
+      "Everything UK businesses need to know about WordPress maintenance services — what's included, what it costs, and how to choose the right plan.",
+    datePublished: '2026-03-09',
+    dateModified: '2026-03-09',
+    category: 'Maintenance',
+    author: 'WebAdish',
+  },
+  {
+    slug: 'wordpress-site-keeps-getting-hacked',
+    title: "WordPress Site Keeps Getting Hacked? Here's Why & How to Stop It",
+    excerpt:
+      'If your WordPress site keeps getting hacked even after cleanup, backdoors are almost certainly the cause. Learn why repeat hacks happen and how to break the cycle permanently.',
+    datePublished: '2026-03-09',
+    dateModified: '2026-03-09',
+    category: 'Recovery',
+    author: 'WebAdish',
+  },
   // Legacy posts (kept)
   {
     slug: 'signs-your-wordpress-website-has-been-hacked-and-what-to-do-next-in-london',
