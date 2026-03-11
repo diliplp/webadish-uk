@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
       { source: '/support-hosting', destination: '/web-hosting-email-services', permanent: true },
       { source: '/support-hosting/', destination: '/web-hosting-email-services', permanent: true },
 
+      // Old WordPress blog posts & author archives (from GSC "Crawled not indexed" report 2026-03-11)
+      { source: '/10-common-web-design-mistakes-to-avoid', destination: '/blog', permanent: true },
+      { source: '/10-common-web-design-mistakes-to-avoid/', destination: '/blog', permanent: true },
+      { source: '/author/:path*', destination: '/about-webadish-web-agency', permanent: true },
+
       // WordPress-specific paths (from old WordPress site — fix 404s + 403s in GSC)
       { source: '/wp-login.php', destination: '/', permanent: true },
       { source: '/xmlrpc.php', destination: '/', permanent: true },
