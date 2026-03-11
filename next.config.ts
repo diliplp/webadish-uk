@@ -70,7 +70,8 @@ const nextConfig: NextConfig = {
       { source: '/wp-json/:path*', destination: '/', permanent: true },
       { source: '/feed', destination: '/blog', permanent: true },
       { source: '/feed/', destination: '/blog', permanent: true },
-      { source: '/?feed=rss2', destination: '/blog', permanent: true },
+      // Note: /?feed=rss2 (query string) cannot be matched in Next.js redirect source
+      // — handled at Cloudflare level or ignored (negligible traffic)
     ];
   },
 };
